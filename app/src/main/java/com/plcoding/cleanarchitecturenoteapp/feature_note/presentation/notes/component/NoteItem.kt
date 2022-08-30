@@ -29,12 +29,13 @@ fun NoteItem(
     modifier: Modifier = Modifier,
     cornerRadius: Dp = 10.dp,
     cutCornerSize: Dp = 30.dp,
+
     onDeleteClick: () -> Unit
 ) {
     Box(
-        modifier = Modifier
+        modifier = modifier
     ) {
-        Canvas(modifier = Modifier.matchParentSize()) {
+        Canvas(modifier = modifier.matchParentSize()) {
             val clipPath = Path().apply {
                 lineTo(size.width - cutCornerSize.toPx(), 0f)
                 lineTo(size.width, cutCornerSize.toPx())
@@ -60,7 +61,7 @@ fun NoteItem(
                 )
             }
             Column(
-                modifier = Modifier
+                modifier = modifier
                     .fillMaxSize()
                     .padding(16.dp)
                     .padding(end = 32.dp)
@@ -82,8 +83,9 @@ fun NoteItem(
                 )
             }
             IconButton(
-                onClick = onDeleteClick,
-                modifier = Modifier.align(Alignment.BottomEnd)
+                onClick =  onDeleteClick,
+                modifier = modifier
+                    .align(Alignment.BottomEnd)
             ) {
                 Icon(
                     imageVector = Icons.Default.Delete,

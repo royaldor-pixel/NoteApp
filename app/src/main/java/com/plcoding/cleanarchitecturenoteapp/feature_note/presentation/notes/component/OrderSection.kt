@@ -1,11 +1,13 @@
 package com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.notes.component
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.plcoding.cleanarchitecturenoteapp.feature_note.domain.util.NoteOrder
 import com.plcoding.cleanarchitecturenoteapp.feature_note.domain.util.OrderType
 
+@Composable
 fun OrderSection(
     modifier: Modifier = Modifier,
     noteOrder: NoteOrder = NoteOrder.Date(OrderType.Descending),
